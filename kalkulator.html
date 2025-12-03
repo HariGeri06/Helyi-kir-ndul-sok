@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Utazásköltség-kalkulátor.">
+  <title>Kalkulátor — Helyi Kirándulások</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/tree.png">
+  <script defer src="js/kalkulator.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Helyi Kirándulások</a>
+      <button id="nav-toggle" aria-expanded="false">☰</button>
+      <nav id="main-nav" aria-label="Fő navigáció">
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="utvonalak.html">Útvonalak</a></li>
+          <li><a href="tippek.html">Tippek</a></li>
+          <li><a href="galeria.html">Galéria</a></li>
+          <li><a href="kalkulator.html">Kalkulátor</a></li>
+          <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Utazásköltség-kalkulátor</h1>
+    <form id="calcForm" class="calc-form" onsubmit="return false;">
+      <label for="nights">Éjszakák száma</label>
+      <input type="number" id="nights" name="nights" min="1" value="1" required>
+
+      <label for="people">Résztvevők</label>
+      <input type="number" id="people" name="people" min="1" value="2" required>
+
+      <label for="accom">Szállás ár/éj (Ft)</label>
+      <input type="number" id="accom" name="accom" min="0" value="10000" required>
+
+      <label for="travel">Utazás költség/fő (Ft)</label>
+      <input type="number" id="travel" name="travel" min="0" value="2000">
+
+      <label for="entry">Belépők napi össz. (Ft)</label>
+      <input type="number" id="entry" name="entry" min="0" value="0">
+
+      <div class="calc-buttons">
+        <button type="button" id="calcBtn">Számol</button>
+        <button type="button" id="saveBtn">Mentés</button>
+      </div>
+    </form>
+
+    <div id="calcResult" class="calc-result" aria-live="polite"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Harkányi Gergely - Helyi Kirándulások</p>
+    </div>
+  </footer>
+</body>
+</html>

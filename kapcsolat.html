@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Kapcsolatfelvételi űrlap.">
+  <title>Kapcsolat — Helyi Kirándulások</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/tree.png">
+  <script defer src="js/form-validation.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">Helyi Kirándulások</a>
+      <button id="nav-toggle" aria-expanded="false">☰</button>
+      <nav id="main-nav" aria-label="Fő navigáció">
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="utvonalak.html">Útvonalak</a></li>
+          <li><a href="tippek.html">Tippek</a></li>
+          <li><a href="galeria.html">Galéria</a></li>
+          <li><a href="kalkulator.html">Kalkulátor</a></li>
+          <li><a href="kapcsolat.html">Kapcsolat</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Kapcsolat</h1>
+    <form id="contactForm" novalidate>
+      <div class="form-row">
+        <label for="name">Név</label>
+        <input type="text" id="name" name="name" required minlength="2">
+      </div>
+
+      <div class="form-row">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-row">
+        <label for="phone">Telefonszám</label>
+        <input type="tel" id="phone" name="phone" pattern="^\+?[0-9\s\-]{7,15}$">
+      </div>
+
+      <div class="form-row">
+        <label for="people">Résztvevők száma</label>
+        <input type="number" id="people" name="people" min="1" max="50" required>
+      </div>
+
+      <div class="form-row">
+        <label for="date">Tervezett dátum</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div class="form-row">
+        <label for="type">Túratípus</label>
+        <select id="type" name="type" required>
+          <option value="">-- Válassz --</option>
+          <option value="könnyű">Könnyű</option>
+          <option value="közepes">Közepes</option>
+          <option value="nehez">Nehéz</option>
+        </select>
+      </div>
+
+      <fieldset class="form-row">
+        <legend>Igények</legend>
+        <label><input type="checkbox" name="needs" value="térkép"> Térkép</label>
+        <label><input type="checkbox" name="needs" value="idegenvezető"> Idegenvezető</label>
+      </fieldset>
+
+      <fieldset class="form-row">
+        <legend>Értesítési mód</legend>
+        <label><input type="radio" name="contactMethod" value="email" checked> Email</label>
+        <label><input type="radio" name="contactMethod" value="phone"> Telefon</label>
+      </fieldset>
+
+      <div class="form-row">
+        <label for="notes">Megjegyzés</label>
+        <textarea id="notes" name="notes" rows="4"></textarea>
+      </div>
+
+      <button type="submit">Küldés</button>
+    </form>
+
+    <div id="formMessages" role="status" aria-live="polite"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Harkányi Gergely - Helyi Kirándulások</p>
+    </div>
+  </footer>
+</body>
+</html>
